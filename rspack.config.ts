@@ -4,9 +4,8 @@ import { rspack } from "@rspack/core";
 import * as RefreshPlugin from "@rspack/plugin-react-refresh";
 import { ModuleFederationPlugin } from "@module-federation/enhanced/rspack";
 
-
 import { mfConfig } from "./module-federation.config";
-
+import * as Dotenv from "dotenv-webpack";
 const isDev = process.env.NODE_ENV === "development";
 
 // Target browsers, see: https://github.com/browserslist/browserslist
@@ -75,6 +74,7 @@ export default defineConfig({
     ],
   },
   plugins: [
+    new Dotenv(),
     new rspack.HtmlRspackPlugin({
       template: "./index.html",
     }),
