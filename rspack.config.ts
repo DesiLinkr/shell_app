@@ -18,11 +18,17 @@ export default defineConfig({
   },
   resolve: {
     extensions: ["...", ".ts", ".tsx", ".jsx"],
+    alias: {
+      "@": path.resolve(__dirname, "."), // or '.' if your components are at project root
+    },
   },
 
   devServer: {
     port: 3000,
     historyApiFallback: true,
+    static: {
+      directory: path.resolve(__dirname, "public"), // ✅ expose images
+    },
     watchFiles: [path.resolve(__dirname, "src")],
   },
   output: {
