@@ -13,12 +13,15 @@
     "useDefineForClassFields": true,
     "allowImportingTsExtensions": true,
     "paths": {
-      "*": ["./@mf-types/*"]
-    }
+      "*": ["./@mf-types/*"],
+      "@/*": ["./*"],
+    },
   },
-  "include": ["src","utils"],
+ "include": ["src", "src/components", "src/lib","utils"],
   "ts-node": {
     "compilerOptions": {
+      "baseUrl": ".",
+
       "module": "CommonJS"
     }
   }

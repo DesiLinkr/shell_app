@@ -1,4 +1,4 @@
-const auth_app_url = process.env.MF_URL || "http://localhost:3001";
+const auth_app_url = "https://auth-desilinkr.netlify.app";
 
 export const mfConfig = {
   name: "shell_app",
